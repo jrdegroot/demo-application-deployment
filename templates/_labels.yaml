@@ -1,0 +1,4 @@
+{{- define "app.label" -}}
+demo-application-{{ $.Values.environment }}
+{{- end }}
+
