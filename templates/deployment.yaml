@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: myapp
-          image: demo-application:{{ .Values.buildVersion }}
+          image: 'demo-application:{{ .Values.buildVersion }}'
           ports:
             - containerPort: 8080
