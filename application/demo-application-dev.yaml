@@ -5,11 +5,13 @@ metadata:
   namespace: argocd
 spec:
   project: default
-
   source:
-    repoURL: https://github.com/jrdegroot/demo-application-deployment.git
+    repoURL: 'https://github.com/jrdegroot/demo-application-deployment.git'
     targetRevision: HEAD
-    path: main
+    path: .
+    helm:
+      valueFiles:
+        - dev.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: demo
@@ -17,7 +19,6 @@ spec:
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
-
     automated:
       selfHeal: true
       prune: true
