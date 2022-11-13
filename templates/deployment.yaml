@@ -13,7 +13,7 @@ spec:
         app: {{ include "app.label" . }}
     spec:
       containers:
-        - name: myapp
+        - name: {{ include "app.label" . }}
           image: demo-application:{{ .Values.buildVersion }}
           ports:
             - containerPort: 8080
